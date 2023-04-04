@@ -4,6 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--<%@ page language="java" contentType="text/html; charset=ISO-8859-1"--%>
          <%--pageEncoding="ISO-8859-1" isELIgnored="false"%>--%>
+<%--<c:set var="contextPath" value="${pageContext.request.contextPath}"/>--%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +41,7 @@
 
  <!-- form đăng nhập -->
 <h3>Đăng nhập</h3>
-<form method="post" action="${pageContext.request.contextPath}/checkLogin">
+<form method="post" action="${pageContext.request.contextPath}/checkLogin" id="login">
 
     <input name="email" type="text" class="form-control" placeholder="email"
            autofocus="true"/>
@@ -48,9 +49,9 @@
     <input name="password" type="password" class="form-control" placeholder="Password"/>
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Đăng nhập</button>
-
+    <p style="color: blueviolet;">Bạn chưa có tài khoản ?
+        <span id="loginHandle" style="color: rgb(243, 60, 60);">Đăng kí</span></p>
 </form>
-
 
 <svg xmlns="http://www.w3.org/2000/svg" class="icons">
     <symbol id="icon-arrow-right" viewBox="0 0 1792 1792">
@@ -92,7 +93,7 @@
         <div class="form__field">
             <input type="submit" value="Đăng Ký">
         </div>
-         <p style="color: blueviolet;">Bạn đã có tài khoản ? 
+         <p style="color: blueviolet;">Bạn đã có tài khoản ?
         <span id="registerHandle" style="color: rgb(243, 60, 60);">Đăng Nhập</span></p>
     </form>
 </div>
@@ -183,3 +184,4 @@
 
 </body>
 </html>
+
